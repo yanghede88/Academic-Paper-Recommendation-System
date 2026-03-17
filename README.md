@@ -1,4 +1,16 @@
 # Academic-Paper-Recommendation-System
 # README
+1. OpenAlex API Fetch
+   - Fetch paper metadata from OpenAlex using the public API
+   - Retrieve title, abstract, publication year, citation count, references, and concepts
+   - Focus on NLP-related papers for the recommendation dataset
 
-This notebook consists of three main stages. First, paper metadata is collected through the OpenAlex API, where NLP-related papers are fetched together with key metadata such as title, abstract, publication year, citation count, references, and concept labels. Second, the retrieved data is stored in PostgreSQL, where separate tables are created for papers, citation relationships, and concept mappings to support efficient querying and recommendation. Third, abstract embeddings are generated for papers with available abstracts using the all-MiniLM-L6-v2 sentence-transformer model, producing 384-dimensional vectors that are stored in the database for later semantic similarity computation during recommendation.
+2. PostgreSQL Storage
+   - Store fetched paper metadata in PostgreSQL tables
+   - Maintain separate tables for papers, citation relationships, and concept mappings
+   - Enable structured querying for recommendation and analysis
+
+3. Embedding Generation
+   - Generate abstract embeddings for papers with available abstracts
+   - Use the all-MiniLM-L6-v2 sentence-transformer model
+   - Store 384-dimensional vectors in PostgreSQL for semantic similarity computation
